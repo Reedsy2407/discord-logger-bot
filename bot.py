@@ -223,7 +223,7 @@ async def on_voice_state_update(member, before, after):
         canal_voz = member.guild.get_channel(CANAL_VOZ_ID)
         if canal_voz:
             personas = len([m for m in canal_voz.members if not m.bot])
-            if personas < 2 and CANAL_VOZ_ID in canales_notificados:
+            if personas == 0 and CANAL_VOZ_ID in canales_notificados:
                 canales_notificados.discard(CANAL_VOZ_ID)
 
 
